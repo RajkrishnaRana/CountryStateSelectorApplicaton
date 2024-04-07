@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "countrycitystatejson": "^21.3.2702",
     "react": "18.2.0",
     "react-native": "0.73.6",
     "react-native-element-dropdown": "^2.10.4"
