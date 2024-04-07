@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Dropdown} from 'react-native-element-dropdown';
 
-const DropdownComponent = ({value, setValue, data}) => {
+const DropdownComponent = ({value, setValue, data, label}) => {
   // const [value, setValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
 
@@ -10,7 +10,7 @@ const DropdownComponent = ({value, setValue, data}) => {
     if (value || isFocus) {
       return (
         <Text style={[styles.label, {color: isFocus ? 'blue' : 'black'}]}>
-          Dropdown label
+          {label}
         </Text>
       );
     }

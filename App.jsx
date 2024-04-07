@@ -75,6 +75,7 @@ const App = () => {
           value={selectedCountry}
           setValue={setselectedCountry}
           data={allCountryData}
+          label="All Countries"
         />
       </View>
       {selectedCountry ? (
@@ -84,6 +85,7 @@ const App = () => {
             value={selectedStates}
             setValue={setSelectedStates}
             data={states}
+            label={`${selectedCountry.label}'s All States`}
           />
         </View>
       ) : (
