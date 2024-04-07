@@ -77,7 +77,7 @@ const App = () => {
           data={allCountryData}
         />
       </View>
-      {selectedCountry && (
+      {selectedCountry ? (
         <View>
           <Text style={styles.headerText}>Please Select a State</Text>
           <DropdownComponent
@@ -86,6 +86,10 @@ const App = () => {
             data={states}
           />
         </View>
+      ) : (
+        <Text style={styles.msgText}>
+          *Please Select a country to select States
+        </Text>
       )}
     </View>
   );
@@ -108,5 +112,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     fontSize: 20,
     fontWeight: 'bold',
+  },
+  msgText: {
+    color: 'grey',
+    fontSize: 13,
+    alignSelf: 'center',
   },
 });
