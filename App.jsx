@@ -67,21 +67,24 @@ const App = () => {
           label="All Countries"
         />
       </View>
-      {selectedCountry ? (
-        <View>
-          <Text style={styles.headerText}>Please Select a State</Text>
-          <DropdownComponent
-            value={selectedStates}
-            setValue={setSelectedStates}
-            data={states}
-            label={`${selectedCountry.label}'s All States`}
-          />
-        </View>
-      ) : (
-        <Text style={styles.msgText}>
-          *Please Select a country to select States
-        </Text>
-      )}
+      <View>
+        <Text style={styles.headerText}>Please Select a State</Text>
+        <DropdownComponent
+          value={selectedStates}
+          setValue={setSelectedStates}
+          data={states}
+          label={
+            selectedCountry
+              ? `${selectedCountry.label}'s All States`
+              : 'No selected Country'
+          }
+        />
+        {!selectedCountry && (
+          <Text style={styles.msgText}>
+            *Please Select a country to select States
+          </Text>
+        )}
+      </View>
     </View>
   );
 };
